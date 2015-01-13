@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Список типов заметок</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Буквенный код</th>
+      <th>Цифровой код</th>
+      <th>Считывать?</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @note_styles.each do |note_style| %>
+      <tr>
+        <td><%= note_style.name %></td>
+        <td><%= note_style.code %></td>
+        <td><%= note_style.style %></td>
+        <td><%= link_to 'Показать', note_style %></td>
+        <td><%= link_to 'Редактировать', edit_note_style_path(note_style) %></td>
+        <td><%= link_to 'Удалить', note_style, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Создать тип заметки', new_note_style_path %>

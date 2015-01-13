@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Список заметок</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>С</th>
+      <th>По</th>
+      <th>Dep person</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @notes.each do |note| %>
+      <tr>
+        <td><%= note.start %></td>
+        <td><%= note.finish %></td>
+        <td><%= note.dep_person %></td>
+        <td><%= link_to 'Показать', note %></td>
+        <td><%= link_to 'Редактировать', edit_note_path(note) %></td>
+        <td><%= link_to 'Удалить', note, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Новая заметка', new_note_path %>

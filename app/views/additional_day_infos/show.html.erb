@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Дата:</strong>
+  <%= @additional_day_info.day %>
+</p>
+
+<p>
+  <strong>Тип:</strong>
+  <%= @additional_day_info.style %>
+</p>
+
+<p>
+  <strong>Год:</strong>
+  <%= @additional_day_info.year %>
+</p>
+
+<%= link_to 'Редактировать', edit_additional_day_info_path(@additional_day_info) %> |
+<%= link_to 'Назад', additional_day_infos_path %>

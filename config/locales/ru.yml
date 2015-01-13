@@ -1,0 +1,56 @@
+ru:
+  helpers:
+    submit:
+      create: Сохранить
+      submit: Сохранить
+      update: Сохранить
+  activerecord:
+    models:
+      department: Отдел
+      year: Год
+      additional_day_info: Дополнительная информация по дню
+      note: Заметки
+      note_style: Тип заметки
+      person: Человек 
+      contract: Договор
+      user: Пользователь
+    attributes:
+      department:
+        style: Тип
+        name: Наименование
+        director: Директор
+        responsible: Ответственный
+        year_id: Год
+      year:
+        name: Номер года
+        is_current: Этот год сейчас?
+      additional_day_info:
+        day: Дата
+        style: Тип
+        year_id: Год
+      note:
+        start: С
+        finish: По
+      note_style:
+        name: Буквенный код
+        code: Цифровой код
+        style: Считывать?
+      person:
+        first_name: Имя
+        second_name: Фамилия
+        last_name: Отчество
+      contract:
+        post: Должность
+        rate: Ставка
+        budget: Бюджет/Внебюджет
+        style: Тип
+        start: С
+        finish: По
+      user:
+        first_name: Имя
+        second_name: Фамилия
+        last_name: Отчество
+        username: Логин
+        password: Пароль
+        is_operator: Оператор?
+        is_admin: Администратор?

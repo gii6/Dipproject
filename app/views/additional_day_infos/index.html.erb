@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Дополнительная информация по дням</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Дата</th>
+      <th>Тип</th>
+      <th>Год</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @additional_day_infos.each do |additional_day_info| %>
+      <tr>
+        <td><%= additional_day_info.day %></td>
+        <td><%= additional_day_info.style %></td>
+        <td><%= additional_day_info.year %></td>
+        <td><%= link_to 'Показать', additional_day_info %></td>
+        <td><%= link_to 'Редактировать', edit_additional_day_info_path(additional_day_info) %></td>
+        <td><%= link_to 'Удалить', additional_day_info, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Создать', new_additional_day_info_path %>

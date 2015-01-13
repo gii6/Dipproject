@@ -1,0 +1,16 @@
+- currentYear = StudyYear.current.first
+.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      %a.navbar-brand{:href => root_url}
+        %img{:src => "/assets/logo.png", :height => "13px"}
+        - unless currentYear.nil?
+          = currentYear.name
+      %button.navbar-toggle{"data-target" => "#navbar-main", "data-toggle" => "collapse", :type => "button"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+    #navbar-main.navbar-collapse.collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a{:href => login_url} Войти

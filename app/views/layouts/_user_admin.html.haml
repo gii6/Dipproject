@@ -1,0 +1,23 @@
+- currentYear = StudyYear.current.first
+- loginText  = current_user.try(:second_name) + ' ' + current_user.try(:first_name) + ' ' + current_user.try(:last_name)
+.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      %a.navbar-brand{:href => root_url}
+        %img{:src => "/assets/logo.png", :height => "13px"}
+        - unless currentYear.nil?
+          = currentYear.name
+      %button.navbar-toggle{"data-target" => "#navbar-main", "data-toggle" => "collapse", :type => "button"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+    #navbar-main.navbar-collapse.collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          =link_to "Кафедры", departments_path
+        %li
+          =link_to "Список пользователей", users_path
+        %li
+          =link_to "Года", years_path
+        %li
+          =link_to  loginText +" (Выход)", logout_path

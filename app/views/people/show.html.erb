@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Имя:</strong>
+  <%= @person.first_name %>
+</p>
+
+<p>
+  <strong>Фамилия:</strong>
+  <%= @person.second_name %>
+</p>
+
+<p>
+  <strong>Отчество:</strong>
+  <%= @person.last_name %>
+</p>
+
+<p>
+  <strong>External:</strong>
+  <%= @person.external_id %>
+</p>
+
+<%= link_to 'Редактировать', edit_person_path(@person) %> |
+<%= link_to 'Назад', people_path %>

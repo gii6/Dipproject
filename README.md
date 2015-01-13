@@ -1,2 +1,0 @@
-# Dipproject
-DipProject

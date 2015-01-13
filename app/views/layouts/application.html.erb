@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Diplom</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <% if current_user.nil? %>
+      <%= render 'layouts/user_not_logged' %>
+    <% elsif current_user.admin? %>
+      <%= render 'layouts/user_admin' %>
+    <% elsif current_user.operator? %>
+      <%= render 'layouts/user_operator' %>
+    <% else %>
+      <%= render 'layouts/user_simple' %>
+    <% end %>
+    <div class="container">
+      <% if flash[:alert] %>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="bs-component">
+              <div class="alert alert-dismissable alert-danger">
+                <p id="notice">
+                  <%= flash[:alert] %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <% if flash[:notice] %>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="bs-component">
+              <div class="alert alert-dismissable alert-info">
+                <p id="alert">
+                  <%= flash[:notice] %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
+  </body>
+</html>
+

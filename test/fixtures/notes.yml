@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start: 2015-01-13
+  finish: 2015-01-13
+  dep_person_id: 
+
+two:
+  start: 2015-01-13
+  finish: 2015-01-13
+  dep_person_id: 

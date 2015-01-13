@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Dep People</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Department</th>
+      <th>Contract</th>
+      <th>Person</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dep_people.each do |dep_person| %>
+      <tr>
+        <td><%= dep_person.department %></td>
+        <td><%= dep_person.contract %></td>
+        <td><%= dep_person.person %></td>
+        <td><%= link_to 'Show', dep_person %></td>
+        <td><%= link_to 'Edit', edit_dep_person_path(dep_person) %></td>
+        <td><%= link_to 'Destroy', dep_person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dep person', new_dep_person_path %>

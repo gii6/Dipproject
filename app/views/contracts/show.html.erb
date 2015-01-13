@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Должность:</strong>
+  <%= @contract.post %>
+</p>
+
+<p>
+  <strong>Ставка:</strong>
+  <%= @contract.rate %>
+</p>
+
+<p>
+  <strong>Бюджет/Внебюджет:</strong>
+  <%= @contract.budget %>
+</p>
+
+<p>
+  <strong>Тип:</strong>
+  <%= @contract.style %>
+</p>
+
+<p>
+  <strong>С:</strong>
+  <%= @contract.start %>
+</p>
+
+<p>
+  <strong>По:</strong>
+  <%= @contract.finish %>
+</p>
+
+<%= link_to 'Редактировать', edit_contract_path(@contract) %> |
+<%= link_to 'Назад', contracts_path %>

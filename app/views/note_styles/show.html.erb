@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Буквенный код:</strong>
+  <%= @note_style.name %>
+</p>
+
+<p>
+  <strong>Цифровой код:</strong>
+  <%= @note_style.code %>
+</p>
+
+<p>
+  <strong>Считывать?:</strong>
+  <%= @note_style.style %>
+</p>
+
+<%= link_to 'Редактировать', edit_note_style_path(@note_style) %> |
+<%= link_to 'Назад', note_styles_path %>

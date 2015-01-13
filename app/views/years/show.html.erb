@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Номер года:</strong>
+  <%= @year.name %>
+</p>
+
+<p>
+  <strong>Этот год сейчас?:</strong>
+  <%= @year.is_current %>
+</p>
+
+<p>
+  <strong>Месяц:</strong>
+  <%= @year.month %>
+</p>
+
+<%= link_to 'Редактировать', edit_year_path(@year) %> |
+<%= link_to 'Назад', years_path %>

@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %title Дипломная работа
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    - if current_user.nil?
+      = render 'layouts/user_not_logged'
+    -elsif current_user.admin?
+      = render 'layouts/user_admin'
+    -elsif current_user.operator?
+      = render 'layouts/user_operator'
+    -else
+      = render 'layouts/user_simple'
+    .container
+      -if flash[:alert]
+        .row
+          .col-lg-12
+            .bs-component
+              .alert.alert-dismissable.alert-danger
+                %p#notice= flash[:alert]
+      -if flash[:notice]
+        .row
+          .col-lg-12
+            .bs-component
+              .alert.alert-dismissable.alert-info
+                %p#alert= flash[:notice]
+      = yield

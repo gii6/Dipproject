@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>С:</strong>
+  <%= @note.start %>
+</p>
+
+<p>
+  <strong>По:</strong>
+  <%= @note.finish %>
+</p>
+
+<p>
+  <strong>Dep person:</strong>
+  <%= @note.dep_person %>
+</p>
+
+<%= link_to 'Редактировать', edit_note_path(@note) %> |
+<%= link_to 'Назад', notes_path %>
